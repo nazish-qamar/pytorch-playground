@@ -14,7 +14,26 @@ print(n_samples, n_features)
 input_size = n_features
 output_size = n_features
 
-model = nn.Linear(input_size, output_size)
+# option 1
+#model = nn.Linear(input_size, output_size)
+
+# option 2
+# We define our custom layers and then make model for it
+
+class LinearRegression(nn.Module):
+    def __init__(self, input_dim, output_dim):
+        super(LinearRegression, self).__init__()
+
+        # here define our layers
+        self.lin = nn.Linear(input_dim, output_dim)
+
+    def forward(self, x):
+        return self.lin(x)
+
+
+model = LinearRegression(input_size, output_size)
+
+
 
 # gradient
 # MSE = 1/N * (w*x - y)**2
