@@ -48,4 +48,4 @@ for epoch in range(num_epochs):
             print(f"epoch {epoch+1}/{num_epochs}, step{i+1}/{n_iterations}, inputs {inputs.shape}")
 
 #we can also download datasets from torchvision
-torchvision.datasets.MNIST() # or fashion-mnist, cifar, coco
+#torchvision.datasets.MNIST() or fashion-mnist, cifar, coco
